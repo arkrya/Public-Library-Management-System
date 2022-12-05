@@ -6,10 +6,10 @@ from datetime import date
 # MySQL Initiation
 def sqlConnect():
     mydb = mysql.connector.connect(    
-        host = "127.0.0.1",             # Host ID
-        user = "arkrya",                # User_Name
-        password = "Arun@7379703320",   # Password
-        database = "Public_Library"     # Current Selected Available Database
+        host = "Enter Your Host ID",    # Host ID
+        user = "USER",                  # User_Name
+        password = "Your Password",     # Password
+        database = "Your Database"      # Current Selected Available Database
     )        
     
     mycursor = mydb.cursor()               # Defining Execution Cursor
