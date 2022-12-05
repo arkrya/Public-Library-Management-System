@@ -1,0 +1,32 @@
+USE Public_Library;
+
+CREATE TABLE Book_Issue (
+	Issue_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+    M_ID VARCHAR(20) NOT NULL,
+    Book_ID VARCHAR(20) NOT NULL,
+    Issue_Date DATE NOT NULL,
+	Due_Date DATE NOT NULL
+);
+
+
+CREATE TABLE Book_Return (
+	Return_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+    M_ID VARCHAR(20) NOT NULL,
+    Book_ID VARCHAR(20) NOT NULL,
+	Return_Date DATE NOT NULL
+);
+
+
+
+    
+ALTER TABLE Book_Issue 
+	ADD FOREIGN KEY (M_ID) REFERENCES Members(M_ID);
+    
+ALTER TABLE Book_Issue 
+	ADD FOREIGN KEY (Book_ID) REFERENCES Book_Details(Book_ID);
+
+ALTER TABLE Book_Return 
+	ADD FOREIGN KEY (M_ID) REFERENCES Members(M_ID);
+    
+ALTER TABLE Book_Return 
+	ADD FOREIGN KEY (Book_ID) REFERENCES Book_Details(Book_ID);
